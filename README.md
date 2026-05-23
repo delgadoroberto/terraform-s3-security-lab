@@ -33,7 +33,7 @@ The lab focuses on secure infrastructure provisioning and security validation pr
 
 ## Architecture Diagram
 
-![Architecture Diagram](architecture/terraform-s3-security-lab-diagram.png)
+![Architecture Diagram](architecture/terraform-s3-security-lab-Diagram.drawio.png)
 
 ---
 
