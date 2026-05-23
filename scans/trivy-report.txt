@@ -1,0 +1,134 @@
+
+Report Summary
+
+┌─────────┬───────────┬───────────────────┐
+│ Target  │   Type    │ Misconfigurations │
+├─────────┼───────────┼───────────────────┤
+│ .       │ terraform │         0         │
+├─────────┼───────────┼───────────────────┤
+│ main.tf │ terraform │         6         │
+└─────────┴───────────┴───────────────────┘
+Legend:
+- '-': Not scanned
+- '0': Clean (no security findings detected)
+
+
+main.tf (terraform)
+===================
+Tests: 6 (SUCCESSES: 0, FAILURES: 6)
+Failures: 6 (UNKNOWN: 0, LOW: 1, MEDIUM: 0, HIGH: 5, CRITICAL: 0)
+
+AWS-0086 (HIGH): Public access block does not block public ACLs
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+S3 buckets should block public ACLs on buckets and any objects they contain. By blocking, PUTs with fail if the object has any public ACL a.
+
+
+See https://avd.aquasec.com/misconfig/aws-0086
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ main.tf:26
+   via main.tf:23-30 (aws_s3_bucket_public_access_block.public_access)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  23   resource "aws_s3_bucket_public_access_block" "public_access" {
+  24     bucket = aws_s3_bucket.lab_bucket.id
+  25   
+  26 [   block_public_acls       = false
+  27     block_public_policy     = false
+  28     ignore_public_acls      = false
+  29     restrict_public_buckets = false
+  30   }
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+AWS-0087 (HIGH): Public access block does not block public policies
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+S3 bucket policy should have block public policy to prevent users from putting a policy that enable public access.
+
+
+See https://avd.aquasec.com/misconfig/aws-0087
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ main.tf:27
+   via main.tf:23-30 (aws_s3_bucket_public_access_block.public_access)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  23   resource "aws_s3_bucket_public_access_block" "public_access" {
+  24     bucket = aws_s3_bucket.lab_bucket.id
+  25   
+  26     block_public_acls       = false
+  27 [   block_public_policy     = false
+  28     ignore_public_acls      = false
+  29     restrict_public_buckets = false
+  30   }
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+AWS-0089 (LOW): Bucket has logging disabled
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Ensures S3 bucket logging is enabled for S3 buckets
+
+See https://avd.aquasec.com/misconfig/aws-0089
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ main.tf:19-21
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  19 ┌ resource "aws_s3_bucket" "lab_bucket" {
+  20 │   bucket = var.bucket_name
+  21 └ }
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+AWS-0091 (HIGH): Public access block does not ignore public ACLs
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+S3 buckets should ignore public ACLs on buckets and any objects they contain. By ignoring rather than blocking, PUT calls with public ACLs will still be applied but the ACL will be ignored.
+
+
+See https://avd.aquasec.com/misconfig/aws-0091
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ main.tf:28
+   via main.tf:23-30 (aws_s3_bucket_public_access_block.public_access)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  23   resource "aws_s3_bucket_public_access_block" "public_access" {
+  24     bucket = aws_s3_bucket.lab_bucket.id
+  25   
+  26     block_public_acls       = false
+  27     block_public_policy     = false
+  28 [   ignore_public_acls      = false
+  29     restrict_public_buckets = false
+  30   }
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+AWS-0093 (HIGH): Public access block does not restrict public buckets
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+S3 buckets should restrict public policies for the bucket. By enabling, the restrict_public_buckets, only the bucket owner and AWS Services can access if it has a public policy.
+
+
+See https://avd.aquasec.com/misconfig/aws-0093
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ main.tf:29
+   via main.tf:23-30 (aws_s3_bucket_public_access_block.public_access)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  23   resource "aws_s3_bucket_public_access_block" "public_access" {
+  24     bucket = aws_s3_bucket.lab_bucket.id
+  25   
+  26     block_public_acls       = false
+  27     block_public_policy     = false
+  28     ignore_public_acls      = false
+  29 [   restrict_public_buckets = false
+  30   }
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+AWS-0132 (HIGH): Bucket does not encrypt data with a customer managed key.
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Encryption using AWS keys provides protection for your S3 buckets. To gain greater control over encryption, such as key rotation, access policies, and auditability, use customer managed keys (CMKs) with SSE-KMS.
+Note that SSE-KMS is not supported for S3 server access logging destination buckets; in such cases, use SSE-S3 instead.
+
+
+See https://avd.aquasec.com/misconfig/aws-0132
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ main.tf:19-21
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  19 ┌ resource "aws_s3_bucket" "lab_bucket" {
+  20 │   bucket = var.bucket_name
+  21 └ }
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+

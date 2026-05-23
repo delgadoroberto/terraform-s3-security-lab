@@ -1,0 +1,2 @@
+bucket_name = "my-security-lab-bucket"
+aws_region  = "us-east-1"

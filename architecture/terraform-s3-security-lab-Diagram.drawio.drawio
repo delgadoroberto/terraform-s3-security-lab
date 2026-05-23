@@ -1,0 +1,55 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="MYFMe1D5eSsS-9UA9Sfn">
+    <mxGraphModel dx="1198" dy="1102" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="13sd2WmT9-s0QnknhpHm-8" edge="1" parent="1" source="13sd2WmT9-s0QnknhpHm-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;strokeColor=#457B9D;fontColor=default;" target="13sd2WmT9-s0QnknhpHm-3" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="13sd2WmT9-s0QnknhpHm-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#A8DADC;strokeColor=#457B9D;fontColor=#1D3557;" value="Developer Workstation" vertex="1">
+          <mxGeometry height="50" width="150" x="300" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="13sd2WmT9-s0QnknhpHm-9" edge="1" parent="1" source="13sd2WmT9-s0QnknhpHm-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;strokeColor=#457B9D;fontColor=default;" target="13sd2WmT9-s0QnknhpHm-4" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="13sd2WmT9-s0QnknhpHm-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;labelBackgroundColor=none;fontColor=#1D3557;" value="terraform apply" vertex="1">
+          <mxGeometry height="30" width="105" x="322.5" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="13sd2WmT9-s0QnknhpHm-10" edge="1" parent="1" source="13sd2WmT9-s0QnknhpHm-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;strokeColor=#457B9D;fontColor=default;" target="13sd2WmT9-s0QnknhpHm-5" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="13sd2WmT9-s0QnknhpHm-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#A8DADC;strokeColor=#457B9D;fontColor=#1D3557;" value="Terraform IaC" vertex="1">
+          <mxGeometry height="40" width="70" x="340" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="13sd2WmT9-s0QnknhpHm-11" edge="1" parent="1" source="13sd2WmT9-s0QnknhpHm-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;strokeColor=#457B9D;fontColor=default;" target="13sd2WmT9-s0QnknhpHm-6" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="13sd2WmT9-s0QnknhpHm-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#A8DADC;strokeColor=#457B9D;fontColor=#1D3557;" value="LocalStack&amp;nbsp;&lt;div&gt;(AWS Emulator)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="50" width="100" x="325" y="510" as="geometry" />
+        </mxCell>
+        <mxCell id="13sd2WmT9-s0QnknhpHm-15" edge="1" parent="1" source="13sd2WmT9-s0QnknhpHm-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;strokeColor=#457B9D;fontColor=default;" target="13sd2WmT9-s0QnknhpHm-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="13sd2WmT9-s0QnknhpHm-16" edge="1" parent="1" source="13sd2WmT9-s0QnknhpHm-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;strokeColor=#457B9D;fontColor=default;" target="13sd2WmT9-s0QnknhpHm-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="13sd2WmT9-s0QnknhpHm-17" edge="1" parent="1" source="13sd2WmT9-s0QnknhpHm-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;labelBackgroundColor=none;strokeColor=#457B9D;fontColor=default;" target="13sd2WmT9-s0QnknhpHm-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="13sd2WmT9-s0QnknhpHm-6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#A8DADC;strokeColor=#457B9D;fontColor=#1D3557;" value="S3 Bucket" vertex="1">
+          <mxGeometry height="40" width="120" x="315" y="610" as="geometry" />
+        </mxCell>
+        <mxCell id="13sd2WmT9-s0QnknhpHm-12" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;labelBackgroundColor=none;fontColor=#1D3557;" value="Checkov" vertex="1">
+          <mxGeometry height="30" width="80" x="242.5" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="13sd2WmT9-s0QnknhpHm-13" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;labelBackgroundColor=none;fontColor=#1D3557;" value="Trivy" vertex="1">
+          <mxGeometry height="30" width="80" x="335" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="13sd2WmT9-s0QnknhpHm-14" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;labelBackgroundColor=none;fontColor=#1D3557;" value="Audit Script" vertex="1">
+          <mxGeometry height="30" width="80" x="425" y="720" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
